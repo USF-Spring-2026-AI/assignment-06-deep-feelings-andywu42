@@ -1,0 +1,11 @@
+A06 - Deep Feelings
+
+LLM usage
+
+1. I used Cursor AI while working on this assignment. I used the LLM more like a back-and-forth when I was stuck on concepts or trying to understand my results, not to generate the implementation. The main thing I had the LLM do was to make displays easier to read and to make comments on places I missed but should have them.
+
+2. My series of prompts was mostly questions about why things behaved the way they did. For example I asked why the test csv wasn't loading cleanly with read_csv, and it explained that the file mixes comma-separated rows with tab-separated rows that use negative/neutral/positive instead of -1/0/1. I also asked things like "why would stopwords hurt accuracy on tweets" and "why did averaging spacy vectors do worse than bag of words" after I ran my models and saw the numbers.
+
+3. I found this helpful for understanding like a tutor. It was faster to ask why stopword removal might drop sentiment signal on short text than to dig through docs blindly. Same with embeddings — I got a clearer picture of why mean pooling can wash out a single strong word in a tweet. That helped me write the analysis in the readme in my own words.
+
+4. I learned that the test file format matters more than I expected and you have to actually look at the raw rows before assuming read_csv will work. On the modeling side, bigrams helped a little, stopwords alone hurt a bit, and embeddings underperformed bag of words on this data — the LLM helped me connect that to tweet length and how averaging vectors smears out word-level sentiment.
